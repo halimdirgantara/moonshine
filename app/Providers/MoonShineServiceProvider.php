@@ -2,11 +2,11 @@
 
 namespace App\Providers;
 
-use MoonShine\MoonShine;
-use MoonShine\Menu\MenuItem;
-use MoonShine\Menu\MenuGroup;
-use Illuminate\Support\ServiceProvider;
 use App\MoonShine\Resources\CategoryResource;
+use Illuminate\Support\ServiceProvider;
+use MoonShine\Menu\MenuGroup;
+use MoonShine\Menu\MenuItem;
+use MoonShine\MoonShine;
 use MoonShine\Resources\MoonShineUserResource;
 use MoonShine\Resources\MoonShineUserRoleResource;
 
@@ -23,12 +23,13 @@ class MoonShineServiceProvider extends ServiceProvider
                 MenuItem::make('moonshine::ui.resource.role_title', new MoonShineUserRoleResource())
                     ->translatable()
                     ->icon('bookmark'),
-            ])->translatable(),
-
-            MenuItem::make('Category', new CategoryResource())
+            ])->translatable()->icon('heroicons.server'),
+            MenuGroup::make('Master Data', [
+                MenuItem::make('Category', new CategoryResource())
                     ->translatable()
                     ->icon('add'),
-
+            ])  ->translatable()
+                ->icon('heroicons.table-cells'),
             MenuItem::make('Documentation', 'https://laravel.com')
                 ->badge(fn() => 'Check'),
         ]);

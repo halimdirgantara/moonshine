@@ -27,7 +27,7 @@ class CategoryResource extends Resource
             Block::make('New Category', [
                 ID::make(),
                 Text::make('Name', 'name'),
-                Slug::make('slug')->from('name')->separator('-')->unique(),
+                Slug::make('Slug')->from('name')->separator('-')->unique(),
                 Textarea::make('Description', 'description')
             ])
         ];

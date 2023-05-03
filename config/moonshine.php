@@ -7,11 +7,11 @@ return [
     'dir' => 'app/MoonShine',
     'namespace' => 'App\MoonShine',
 
-    'title' => env('MOONSHINE_TITLE', 'MoonShine'),
+    'title' => env('MOONSHINE_TITLE', 'Web SKPD'),
     'logo' => env('MOONSHINE_LOGO', ''),
 
     'route' => [
-        'prefix' => env('MOONSHINE_ROUTE_PREFIX', 'moonshine'),
+        'prefix' => env('MOONSHINE_ROUTE_PREFIX', 'admin'),
         'middleware' => ['web', 'moonshine'],
         'custom_page_slug' => 'custom_page',
         'notFoundHandler' => MoonShineNotFoundException::class
